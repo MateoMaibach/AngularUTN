@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { RickComponent } from './RickAndMorty/Rick.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RickComponent, 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, HttpClientModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
