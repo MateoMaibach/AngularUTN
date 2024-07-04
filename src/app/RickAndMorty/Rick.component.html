@@ -1,0 +1,39 @@
+<body>
+  <header class="title">
+    <h1>Rick And Morty API</h1>
+  </header>
+
+  <div class="input">
+    <div class="input">
+      <input
+        type="text"
+        placeholder="Buscar personajes..."
+        [(ngModel)]="searchTerm"
+      />
+      <button (click)="filtrarPersonajes()">Buscar</button>
+    </div>
+  </div>
+
+  <div class="botones-paginacion">
+    <button (click)="buscoPersonajes()">Ver Personajes</button>
+
+    <button (click)="irA(prevPage)" *ngIf="prevPage">Anterior</button>
+    <button (click)="irA(nextPage)">Siguiente</button>
+  </div>
+  <div class="personajes-container">
+    <div *ngFor="let personaje of listaPersonajes" class="card">
+      <img [src]="personaje.image" />
+      <h2>{{ personaje.name }}</h2>
+      <p>Género: {{ personaje.gender }}</p>
+      <p>Estado: {{ personaje.status }}</p>
+      <p>Tipo: {{ personaje.type }}</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© Proyecto realizado con RickAndMortyAPI</p>
+      <p>Desarrollado por <a target="_blank">Maibach Mateo</a></p>
+    </div>
+  </footer>
+</body>
